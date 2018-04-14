@@ -55,7 +55,7 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-  + plugins:["@nullice/babel-plugin-i18n-export"]
++   plugins:["@nullice/babel-plugin-i18n-export"]
 }
 ```
 
@@ -65,7 +65,7 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-  + plugins:[["@nullice/babel-plugin-i18n-export",{functionName:'$i18n'}]]
++   plugins:[["@nullice/babel-plugin-i18n-export",{functionName:'$i18n'}]]
 }
 ```
 
@@ -79,6 +79,32 @@ $ npx babel src  --plugins=@nullice/babel-plugin-i18n-export
 
 > if you can't find `npx` command try `npm install -g npx`
 
+### Working on Vue-loader
+When vue-loader processes a `.vue` single file, the `<template>` is not processed by Babel by default confign. 
+This will result in the inability to extract the function in the vue `<template>`, so you need to configure vue-loader:
+
+*webpack.config.js*
+``` 
+module.exports = {
+    ...
+    module: {
+        rules: [
+
+            {
+                test: /\.vue$/,
+                loader: "vue-loader",
+                options: {
+                    loaders: {
+                        "scss": "vue-style-loader!css-loader!postcss-loader!sass-loader",
+                        "sass": "vue-style-loader!css-loader!postcss-loader!sass-loader?indentedSyntax", 
+                    },
++                    postLoaders: {
++                        html: 'babel-loader'
++                    }
+                },
+            },
+
+```
 
 ### Exprot file
 
