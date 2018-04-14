@@ -1,6 +1,6 @@
 // Created by nullice on 2018/04/13 - 11:35
 const fs = require("fs")
-let findName = "i18n"
+
 let callList = []
 
 import writeMapTable from "./lib/writeMapTable"
@@ -11,7 +11,7 @@ export default function ({types: t}) {
             CallExpression: {
                 enter (path, state)
                 {
-                    let findName = state.opts.functionName || findName
+                    let findName = state.opts.functionName || "i18n"
                     if (path.type === "CallExpression" && path.node.callee)
                     {
                         let node = path.node

@@ -38,7 +38,7 @@ exported *Export.language.json*
 ### Install
 
 ```bash
-npm i -S babel-plugin-i18n-export
+npm i -D @nullice/babel-plugin-i18n-export
 ```
 
 
@@ -51,7 +51,7 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-  + plugins:["babel-plugin-i18n-export"]
+  + plugins:["@nullice/babel-plugin-i18n-export"]
 }
 ```
 
@@ -61,7 +61,7 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-  + plugins:[["babel-plugin-i18n-export",{functionName:'$i18n'}]]
+  + plugins:[["@nullice/babel-plugin-i18n-export",{functionName:'$i18n'}]]
 }
 ```
 
@@ -70,7 +70,7 @@ your *.babelrc* or elsewhere babel config
 If you don't want to add it to your workflow, you just can run it with bable cli
 
 ```bash
-$ npx babel src  --plugins=babel-plugin-i18n-export
+$ npx babel src  --plugins=@nullice/babel-plugin-i18n-export
 ```
 
 > if you can't find `npx` command try `npm install -g npx`

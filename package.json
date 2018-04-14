@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-i18n-export",
+  "name": "@nullice/babel-plugin-i18n-export",
   "fullName": "babel-plugin-i18n-export",
-  "version": "0.0.0",
+  "version": "0.5.0",
   "description": "create your js lib from zero.",
   "main": "dist/babel-plugin-i18n-export.cjs.js",
   "module": "dist/babel-plugin-i18n-export.es.js",
@@ -19,7 +19,7 @@
     "test": "jest",
     "test-coverage": "jest --coverage",
     "test-coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "publish": "npm publish --registry=https://registry.npmjs.org/ --disturl=/",
+    "publish": "npm publish --registry=https://registry.npmjs.org/ --disturl=/ --access public",
     "zero-init": "node ./.zero/zero-init.js"
   },
   "author": "nullice",

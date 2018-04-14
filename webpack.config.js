@@ -9,48 +9,6 @@ let config = []
 const ENTRY_WEB = "./src/index.js"
 const ENTRY_NODE = "./src/index.js"
 
-if (fs.existsSync(ENTRY_WEB))
-{
-    let babel_loader = {
-        loader: "babel-loader",
-    }
-
-    config.push({
-        entry: ENTRY_WEB,
-        mode: "development",
-        target: "web",
-        output: {
-            filename: PACKAGE_NAME + ".bundle-web.js",
-            path: path.resolve(__dirname, "dist"),
-            library: PACKAGE_NAME,
-            libraryTarget: "umd",
-            libraryExport: "default",
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.js$/,
-                    use:babel_loader,
-                },
-                {
-                    test: /\.tsx?$/,
-                    exclude: /node_modules/,
-                    use: [
-                        babel_loader,
-                        {
-                            loader: "ts-loader",
-                            options: {
-                                transpileOnly: true,
-                            },
-                        },
-                    ],
-                },
-            ],
-
-        },
-
-    })
-}
 
 if (fs.existsSync(ENTRY_NODE))
 {

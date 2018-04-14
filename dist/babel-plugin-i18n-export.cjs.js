@@ -25,8 +25,13 @@ function writeMapTable(callList, state) {
     var key = ""; //多参数
 
     if (_typeof(callInfo.functionArgs) == "object" || typeof callInfo.functionArgs == "array") {
-      preFixed = "$$$" + callInfo.functionArgs[0] + "=";
-      key = callInfo.functionArgs[1];
+      if (callInfo.functionArgs.length == 2 && _typeof(callInfo.functionArgs[1]) == "object") {
+        // i18n("xx${0}xx",{0:1})
+        key = callInfo.functionArgs[0];
+      } else {
+        preFixed = "$$$" + callInfo.functionArgs[0] + "=";
+        key = callInfo.functionArgs[1];
+      }
     } else {
       key = callInfo.functionArgs;
     }
@@ -66,7 +71,6 @@ function writeMapTable(callList, state) {
 // Created by nullice on 2018/04/13 - 11:35
 var fs$1 = require("fs");
 
-var findName = "i18n";
 var callList = [];
 function i18nExprot (_ref) {
   var t = _ref.types;
@@ -74,7 +78,7 @@ function i18nExprot (_ref) {
     visitor: {
       CallExpression: {
         enter: function enter(path, state) {
-          var findName = state.opts.functionName || findName;
+          var findName = state.opts.functionName || "i18n";
 
           if (path.type === "CallExpression" && path.node.callee) {
             var node = path.node;
