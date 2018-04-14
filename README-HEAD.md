@@ -33,18 +33,95 @@ exported *Export.language.json*
  
 ```
 
-
 ## Usage
 
 ### Install
+
 ```bash
 npm i -S babel-plugin-i18n-export
 ```
 
 
+### Configurate babel
+
+your *.babelrc* or elsewhere babel config
+
+```diff
+{
+  "presets": [
+      "@babel/preset-env",
+  ],
+  + plugins:["babel-plugin-i18n-export"]
+}
+```
 
 
+```diff
+{
+  "presets": [
+      "@babel/preset-env",
+  ],
+  + plugins:[["babel-plugin-i18n-export",{functionName:'$i18n'}]]
+}
+```
 
+### just run without *.babelrc*
+
+If you don't want to add it to your workflow, you just can run it with bable cli
+
+```bash
+$ npx babel src  --plugins=babel-plugin-i18n-export
+```
+
+> if you can't find `npx` command try `npm install -g npx`
+
+## Rule
+
+### General Literal
+
+your source code
+
+```js
+i18n("Your General Literal")
+
+// in translationMap: 
+// "Your General Literal"
+```
+
+### Path Literal
+If the target function has 2 parameters, and the second parameter is not an Object, the first parameter will be taken as the Path，it can distinguish between two literally the same text.
+
+your source code
+
+```js
+i18n("home/page1","Your General Literal")
+i18n("home/setting","Your General Literal")
+
+// in translationMap: 
+// "$$$home/page1=Your General Literal"
+// "$$$home/setting=Your General Literal" 
+```
+
+### Variable Literal
+
+If the target function has 2 parameters and last parameter is not Object, and has 3 parameters, This literal will be treated as variable literal, which is supported by some i18n tools.
+
+```js
+i18n("home/page1","Your ${0} Literal", {0:1+1})
+i18n("Your ${0} Literal", {0:1+1})
+
+// in translationMap: 
+// "$$$home/page1=Your ${0} Literal"
+// "Your ${0} Literal"
+```
+
+
+## Options
+
+### `functionName`
+assign a function identifier (name) for extract parameters.
+
+defualt:`18n`
 
 
 

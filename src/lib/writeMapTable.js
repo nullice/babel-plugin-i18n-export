@@ -1,9 +1,6 @@
-
 const fs = require("fs")
 
-
-
-function writeMapTable(callList, state)
+function writeMapTable (callList, state)
 {
     let translationMap = {}
 
@@ -15,8 +12,15 @@ function writeMapTable(callList, state)
         //多参数
         if (typeof callInfo.functionArgs == "object" || typeof callInfo.functionArgs == "array")
         {
-            preFixed = "$$$" + callInfo.functionArgs[0] + "="
-            key = callInfo.functionArgs[1]
+            if (callInfo.functionArgs.length == 2 && typeof callInfo.functionArgs[1] == "object")
+            {// i18n("xx${0}xx",{0:1})
+                key = callInfo.functionArgs[0]
+            } else
+            {
+                preFixed = "$$$" + callInfo.functionArgs[0] + "="
+                key = callInfo.functionArgs[1]
+            }
+
         } else
         {
             key = callInfo.functionArgs
@@ -43,7 +47,7 @@ function writeMapTable(callList, state)
             try
             {
                 nowJson = JSON.parse(fs.readFileSync("local/Export.language.json"))
-            }catch (e)
+            } catch (e)
             {
                 nowJson = {translationMap: {}}
             }

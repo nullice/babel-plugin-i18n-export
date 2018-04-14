@@ -20,5 +20,5 @@ class test {
 var n =new test()
 
 
-test.i18n("4_nnn")
+test.i18n("4_nnn${0}",{0:123})
 n.i18n("5_xxx")

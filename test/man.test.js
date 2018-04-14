@@ -1,10 +1,17 @@
 // Created by nullice on 2018/04/11 - 19:44
 var babel = require("babel-core")
-
+var  fs =require("fs")
 console.log("123")
 
 async function bb ()
 {
+    try
+    {
+        fs.unlinkSync(__dirname + "/../local/Export.language.json")
+    }catch (e)
+    {
+
+    }
 
     return new Promise((resolve, reject) => {
 
@@ -32,7 +39,7 @@ test("import es.js", async () => {
             "1_a111": "1_a111",
             "$$$id=2_hi": "2_hi",
             "3_classThis": "3_classThis",
-            "4_nnn": "4_nnn",
+            "4_nnn${0}": "4_nnn${0}",
             "5_xxx": "5_xxx"
         }
     }
