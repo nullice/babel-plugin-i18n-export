@@ -126,7 +126,6 @@
       //导出翻译表
       post: function post(state) {
         console.log("callList", callList);
-        console.log("findName", findName);
         writeMapTable(callList, state);
       }
     };

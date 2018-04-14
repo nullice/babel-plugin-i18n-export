@@ -71,7 +71,6 @@ export default function ({types: t}) {
         post (state)
         {
             console.log("callList", callList)
-            console.log("findName", findName)
             writeMapTable(callList, state)
 
         },

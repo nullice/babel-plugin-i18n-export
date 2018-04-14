@@ -27,9 +27,10 @@ async function bb ()
 
 }
 
-test("import es.js", async () => {
+test("babel-plugin-i18n-export", async () => {
 
     var result = await  bb()
+
     var json = require(__dirname + "/../local/Export.language.json")
 
     expect(typeof json).toBe("object")
