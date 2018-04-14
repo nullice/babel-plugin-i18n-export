@@ -1,5 +1,37 @@
 # babel-plugin-i18n-export
 
+This babel-plugin used to export translation mapping file into json file from source code.  
+`babel-plugin-i18n-export` will check  function identifier (name) in the code and extract parameters.  
+you can use the exported translation mapping for the next phase of translation work, instead of manually write the translation mapping.
+
+
+## Example
+ 
+
+*source code file*
+```js 
+
+i18n("1 繋がるってことが")
+
+i18n("idPath"," ${0} passed, ${1} total ",{0:2, 1:24*5})
+
+vue.i18n(`3  Listen to “Lemonade” from Mili’s new album “Millennium” `)
+ 
+```
+
+exported *Export.language.json*
+
+```js 
+{
+    "translationMap": {
+        "1 繋がるってことが": "1 繋がるってことが",
+        "$$$idPath= ${0} passed, ${1} total ": " ${0} passed, ${1} total ",
+        "3  Listen to “Lemonade” from Mili’s new album “Millennium” ": "3  Listen to “Lemonade” from Mili’s new album “Millennium” ",
+    }
+}
+ 
+```
+
 
 ## Usage
 
@@ -7,29 +39,6 @@
 ```bash
 npm i -S babel-plugin-i18n-export
 ```
-
-### Import
-```js
-// ES6 modules
-import  babel-plugin-i18n-export from "babel-plugin-i18n-export"
-
-// Node.js (CJS) modules
-var  babel-plugin-i18n-export =  require ("babel-plugin-i18n-export")
-
-// 浏览器载入
-<script src="babel-plugin-i18n-export.umd.js"></script>
-
-// 捆绑了所有 node_modules 依赖
-import babel-plugin-i18n-export from "babel-plugin-i18n-export/dist/babel-plugin-i18n-export.node-bundle.js"
-
-// 捆绑了所有 node_modules 依赖，浏览器适用
-import babel-plugin-i18n-export from "babel-plugin-i18n-export/dist/babel-plugin-i18n-export.web-bundle.js"
-```
-
-
-## Doc
-
-
 
 
 
