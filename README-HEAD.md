@@ -1,8 +1,8 @@
 # babel-plugin-i18n-export
 
-This babel-plugin used to export translation map file into json file from source code.  
+This babel-plugin used to export translation mapping file into json file from source code.  
 `babel-plugin-i18n-export` will check  function identifier (name) in the code and extract parameters. 
-
+you can use the exported translation mapping for the next phase of translation work, instead of manually write the translation mapping.
 
 
 ## Example
@@ -31,7 +31,6 @@ export *Export.language.json*
 }
  
 ```
-
 
 
 ## Usage
