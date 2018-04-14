@@ -42,7 +42,7 @@ npm i -S babel-plugin-i18n-export
 ```
 
 
-### Configurate babel
+### Configurate Babel
 
 your *.babelrc* or elsewhere babel config
 
@@ -65,7 +65,7 @@ your *.babelrc* or elsewhere babel config
 }
 ```
 
-### just run without *.babelrc*
+### Just run without *.babelrc*
 
 If you don't want to add it to your workflow, you just can run it with bable cli
 
@@ -74,6 +74,18 @@ $ npx babel src  --plugins=babel-plugin-i18n-export
 ```
 
 > if you can't find `npx` command try `npm install -g npx`
+
+
+### Exprot file
+
+The exported file is placed in the `local` folder under the project directory.
+``` bash
+ProjectDirectory
+    - local
+        - Export.language.json
+
+```
+
 
 ## Rule
 

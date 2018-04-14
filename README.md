@@ -42,7 +42,7 @@ npm i -S babel-plugin-i18n-export
 ```
 
 
-### Configurate babel
+### Configurate Babel
 
 your *.babelrc* or elsewhere babel config
 
@@ -51,7 +51,7 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-+   plugins:["babel-plugin-i18n-export"]
+  + plugins:["babel-plugin-i18n-export"]
 }
 ```
 
@@ -61,11 +61,11 @@ your *.babelrc* or elsewhere babel config
   "presets": [
       "@babel/preset-env",
   ],
-+   plugins:[["babel-plugin-i18n-export",{functionName:'$i18n'}]]
+  + plugins:[["babel-plugin-i18n-export",{functionName:'$i18n'}]]
 }
 ```
 
-### just run without *.babelrc*
+### Just run without *.babelrc*
 
 If you don't want to add it to your workflow, you just can run it with bable cli
 
@@ -74,6 +74,18 @@ $ npx babel src  --plugins=babel-plugin-i18n-export
 ```
 
 > if you can't find `npx` command try `npm install -g npx`
+
+
+### Exprot file
+
+The exported file is placed in the `local` folder under the project directory.
+``` bash
+ProjectDirectory
+    - local
+        - Export.language.json
+
+```
+
 
 ## Rule
 
@@ -121,4 +133,7 @@ i18n("Your ${0} Literal", {0:1+1})
 ### `functionName`
 assign a function identifier (name) for extract parameters.
 
-defualt:`i18n`
+defualt:`18n`
+
+
+
