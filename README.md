@@ -1,4 +1,5 @@
 # babel-plugin-i18n-export
+<p align="center"> <img src="https://github.com/nullice/babel-plugin-i18n-export/raw/master/logo.png"> </p>
 
 This babel-plugin used to export translation mapping file into json file from source code.  
 `babel-plugin-i18n-export` will check  function identifier (name) in the code and extract parameters.  
