@@ -8,6 +8,7 @@
   "browser": "dist/babel-plugin-i18n-export.umd.js",
   "types": "typings/index.d.ts",
   "typings": "typings/index.d.ts",
+  "repository": "https://github.com/nullice/babel-plugin-i18n-export",
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
