@@ -1,7 +1,7 @@
 {
   "name": "@nullice/babel-plugin-i18n-export",
   "fullName": "babel-plugin-i18n-export",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "create your js lib from zero.",
   "main": "dist/babel-plugin-i18n-export.cjs.js",
   "module": "dist/babel-plugin-i18n-export.es.js",

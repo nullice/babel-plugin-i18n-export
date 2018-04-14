@@ -84,7 +84,7 @@ When vue-loader processes a `.vue` single file, the `<template>` is not processe
 This will result in the inability to extract the function in the vue `<template>`, so you need to configure vue-loader:
 
 *webpack.config.js*
-``` 
+```diff
 module.exports = {
     ...
     module: {
