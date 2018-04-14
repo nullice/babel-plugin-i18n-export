@@ -1,6 +1,7 @@
 # babel-plugin-i18n-export
 [![Build Status](https://travis-ci.org/nullice/babel-plugin-i18n-export.svg?branch=master)](https://travis-ci.org/nullice/babel-plugin-i18n-export)
-
+[![Coverage Status](https://coveralls.io/repos/github/nullice/babel-plugin-i18n-export/badge.svg?branch=master)](https://coveralls.io/github/nullice/babel-plugin-i18n-export?branch=master)
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/@nullice/babel-plugin-i18n-export)
 
 <p align="center"> <img src="https://github.com/nullice/babel-plugin-i18n-export/raw/master/logo.png"> </p>
 
