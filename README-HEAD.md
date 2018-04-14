@@ -1,4 +1,7 @@
 # babel-plugin-i18n-export
+[![Build Status](https://travis-ci.org/nullice/babel-plugin-i18n-export.svg?branch=master)](https://travis-ci.org/nullice/babel-plugin-i18n-export)
+
+
 <p align="center"> <img src="https://github.com/nullice/babel-plugin-i18n-export/raw/master/logo.png"> </p>
 
 This babel-plugin used to export translation mapping file into json file from source code.  
