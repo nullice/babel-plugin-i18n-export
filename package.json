@@ -61,7 +61,6 @@
     "webpack-cli": "^2.0.12"
   },
   "jest": {
-    "coveragePathIgnorePatterns":["/node_modules/", "/dist/"],
     "transform": {
       "^.+\\.tsx?$": "ts-jest",
       "^.+\\.jsx$": "babel-jest",

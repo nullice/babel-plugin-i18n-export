@@ -41,7 +41,10 @@ test("babel-plugin-i18n-export", async () => {
             "$$$id=2_hi": "2_hi",
             "3_classThis": "3_classThis",
             "4_nnn${0}": "4_nnn${0}",
-            "5_xxx": "5_xxx"
+            "5_xxx": "5_xxx",
+            "6_xxx": "6_xxx",
+            "7_O${0}A${1}": "7_O${0}A${1}",
+            "8 KKK": "8 KKK"
         }
     }
     expect(json).toEqual(ob)

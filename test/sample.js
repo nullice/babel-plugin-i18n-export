@@ -22,3 +22,6 @@ var n =new test()
 
 test.i18n("4_nnn${0}",{0:123})
 n.i18n("5_xxx")
+n.i18n(`6_xxx`)
+n.i18n(`7_O${1+1}A${2+2}`)
+n.i18n(`8 KKK`,{0:123})
